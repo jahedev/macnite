@@ -9,6 +9,7 @@
 
   &-left {
     @include flex-row;
+
     &__sitename span {
       @include noselect;
       font-size: 1.8rem;
@@ -61,12 +62,10 @@
 }
 
 %navbar-styles {
-  // background
   background: #da4453;
   background: -webkit-linear-gradient(to right, #89216b, #da4453);
   background: linear-gradient(to right, #89216b, #da4453);
 
-  // other
   height: 60px;
   padding-left: 40px;
   padding-right: 20px;

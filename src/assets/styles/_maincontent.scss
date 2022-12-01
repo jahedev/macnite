@@ -38,9 +38,11 @@ main .main-content .all-app-selectors {
 main .main-content .all-app-selectors .apps-selector {
   @include flex-col;
   row-gap: 40px;
+
   &__header {
     @include flex;
     column-gap: 20px;
+
     & .title {
       font-size: 1.5rem;
     }
