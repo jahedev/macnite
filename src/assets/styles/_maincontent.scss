@@ -1,0 +1,54 @@
+@import '_helper.sass';
+
+main {
+  @include flex;
+}
+
+main .main-content {
+  max-width: 1400px;
+  margin: auto;
+  background: #333;
+  padding: 60px 20px;
+}
+
+main .main-content .website-info {
+  @include flex-col;
+  margin: -20px 0 0 0;
+  row-gap: 30px;
+  background-color: rgb(75, 75, 75);
+  padding: 80px 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+
+  & h1 {
+    font-size: 3rem;
+  }
+
+  & p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+main .main-content .all-app-selectors {
+  @include flex;
+  padding: 20px 20px;
+}
+
+main .main-content .all-app-selectors .apps-selector {
+  @include flex-col;
+  row-gap: 40px;
+  &__header {
+    @include flex;
+    column-gap: 20px;
+    & .title {
+      font-size: 1.5rem;
+    }
+
+    & .total-apps-selected {
+      padding: 2px 5px;
+      border-radius: 50px;
+      background-color: rgb(75, 75, 75);
+    }
+  }
+}

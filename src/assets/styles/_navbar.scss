@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import './_helper.sass';
 
 .nav {
@@ -7,96 +8,66 @@
   @extend %navbar-styles;
 
   &-left {
-    @include flex;
+    @include flex-row;
     &__sitename span {
       @include noselect;
       font-size: 1.8rem;
       font-weight: bold;
-      color: rgb(48, 48, 48);
+      color: rgb(255, 255, 255);
     }
   }
   &-right {
     @include flex;
+    justify-content: flex-end;
     width: 100%;
-    flex-basis: 30%;
 
     &__items {
       list-style: none;
       display: inline;
-    }
 
-    &__items .item {
-      float: left;
-    }
+      & .item {
+        float: left;
 
-    &__items .item:not(:last-child) {
-      margin-right: 10px;
-    }
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
 
-    &__items .item .btn {
-      cursor: pointer;
-      text-decoration: none;
-      color: #333;
-      font-weight: 700;
-      border-radius: 10px;
-      padding: 10px 20px;
+        & .btn {
+          cursor: pointer;
+          text-decoration: none;
+          color: #333;
+          font-weight: 700;
+          padding: 10px 20px;
 
-      background: #00b09b;
-      background: -webkit-linear-gradient(to bottom, #96c93d, #00b09b);
-      background: linear-gradient(to bottom, #96c93d, #00b09b);
+          background: #e6d6ff;
 
-      background: #c9d6ff; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to bottom,
-        #e2e2e2,
-        #c9d6ff
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to bottom,
-        #e2e2e2,
-        #c9d6ff
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
+          &:hover {
+            opacity: 0.85;
+          }
 
-    &__items .item .btn.download {
-      color: white;
-      background: #7f00ff; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to bottom,
-        #e100ff,
-        #7f00ff
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to bottom,
-        #e100ff,
-        #7f00ff
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          &:active {
+            opacity: 1;
+            box-shadow: none;
+          }
+
+          &.download {
+            color: white;
+            background: #2e2532;
+          }
+        }
+      }
     }
   }
 }
 
 %navbar-styles {
   // background
-  background: #0f2027;
-  background: -webkit-linear-gradient(to left, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to left, #2c5364, #203a43, #0f2027);
-  background: #3494e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ec6ead,
-    #3494e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ec6ead,
-    #3494e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #da4453;
+  background: -webkit-linear-gradient(to right, #89216b, #da4453);
+  background: linear-gradient(to right, #89216b, #da4453);
 
   // other
-  height: 80px;
-  margin: 10px 0 0 0;
+  height: 60px;
   padding-left: 40px;
   padding-right: 20px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
